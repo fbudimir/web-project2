@@ -22,6 +22,7 @@ export const generateDashboardPage = (users: User[], comments: Comment[]) => {
         <hr/>
         
         <h2>Users:</h2>
+        <p><b>Upute:</b> Ovo je primjer Broken Access Control-a, prijavljeni korisnik bi morao imati mogućnost pregleda samo stranice <b>svojeg</b> korisnika. Ukoliko je Bad Access Control upaljen, korisnik bi mogao pregledati stranicu bilokojeg drugog korisnika.</p>
         <form action="/user" method="POST">
           <label for="brokenAccessControl">Broken Access Control allowed?</label>
           <input type="checkbox" id="brokenAccessControl" name="brokenAccessControl" value="true" />
@@ -42,7 +43,9 @@ export const generateDashboardPage = (users: User[], comments: Comment[]) => {
         <hr/>
         
         <h2>Comments:</h2>
-        <form action="/addComment" method="POST">
+          <p><b>Upute:</b> Ovo je primjer Stored XSS-a, ukoliko je XSS dopušten, input se ne sanira protiv html tagova. Probajte upisati &lt;script&gt;alert('XSS Test')&lt;/script&gt;</p>
+          <p>NOTE: Mogućnost brisanja svakog komentara je tu samo radi pogodnosti.</p>
+          <form action="/addComment" method="POST">
           <label for="xss">XSS allowed for this comment?</label>
           <input type="checkbox" id="xss" name="xss" value="true" />
           <br/>
@@ -69,7 +72,6 @@ export const generateDashboardPage = (users: User[], comments: Comment[]) => {
 						)
 						.join("")}
             <br/>
-            <p>NOTE: Mogucnost brisanja svakog komentara je tu samo radi pogodnosti.</p>
         </div>
       </body>
     </html>
