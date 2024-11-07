@@ -16,6 +16,10 @@ export const generateDashboardPage = (users: User[], comments: Comment[]) => {
         <form action="/logout" method="POST" style="display: inline">
           <button type="submit">Logout</button>
         </form>
+
+        <br/>
+        <br/>
+        <hr/>
         
         <h2>Users:</h2>
         <form action="/user" method="POST">
@@ -33,6 +37,9 @@ export const generateDashboardPage = (users: User[], comments: Comment[]) => {
 							.join("")}
           </div>
         </form>
+
+        <br/>
+        <hr/>
         
         <h2>Comments:</h2>
         <form action="/addComment" method="POST">
